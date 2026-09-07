@@ -1,0 +1,97 @@
+{
+  "project_name": "ALS Royal Enfield Service",
+  "archetype": "Performance Pro & Swiss Editorial Hybrid",
+  "theme": "Dark Mode (Deep Charcoal & Workshop Matte Amber)",
+  "color_palette": {
+    "background_primary": "#0D0F12",
+    "background_secondary": "#14181F",
+    "background_card": "#1A1F28",
+    "border_subtle": "rgba(255, 255, 255, 0.08)",
+    "border_accent": "rgba(245, 176, 39, 0.3)",
+    "text_primary": "#F3F4F6",
+    "text_secondary": "#9CA3AF",
+    "text_muted": "#6B7280",
+    "accent_amber": "#F5B027",
+    "accent_amber_hover": "#E5A017",
+    "accent_red": "#D9383A",
+    "accent_red_hover": "#B82C2E",
+    "neutral_charcoal": "#1F242D"
+  },
+  "typography": {
+    "font_heading": "Cabinet Grotesk / Barlow Condensed / Outfit",
+    "font_body": "Inter / DM Sans",
+    "font_mono": "JetBrains Mono",
+    "h1": "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-none",
+    "h2": "text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white",
+    "h3": "text-xl sm:text-2xl font-semibold text-white",
+    "body_lg": "text-lg text-gray-300 leading-relaxed",
+    "body_base": "text-base text-gray-400 leading-relaxed",
+    "overline": "text-xs font-mono uppercase tracking-[0.25em] text-[#F5B027]"
+  },
+  "layout_and_spacing": {
+    "container_padding": "px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto",
+    "section_spacing": "py-16 md:py-24 lg:py-32",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-6 lg:gap-8",
+    "border_radius": "rounded-md md:rounded-lg",
+    "card_padding": "p-6 md:p-8"
+  },
+  "key_components": {
+    "navigation": {
+      "type": "Sticky Glassmorphism Header",
+      "style": "backdrop-blur-xl bg-[#0D0F12]/80 border-b border-white/10 z-50",
+      "desktop_links": ["Home", "Services", "Workshop", "About", "Gallery", "Visit Us", "Contact"],
+      "mobile_sheet": "Radix/Shadcn Sheet menu with full list + quick call CTAs",
+      "cta_button": "Book Service (#F5B027 amber button)"
+    },
+    "mobile_bottom_bar": {
+      "type": "Fixed Mobile Action Bar",
+      "visible": "md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#14181F]/95 backdrop-blur-md border-t border-white/10 px-4 py-3 flex items-center justify-around",
+      "actions": [
+        {"label": "Call Us", "href": "tel:9007692978", "icon": "Phone", "test_id": "mobile-bar-call-button"},
+        {"label": "Book Service", "href": "/book", "icon": "Calendar", "test_id": "mobile-bar-book-button"},
+        {"label": "Get Directions", "href": "https://maps.google.com/?q=ALS+Royal+Enfield+Service", "icon": "Navigation", "test_id": "mobile-bar-directions-button"}
+      ]
+    },
+    "booking_form": {
+      "type": "Demo Interactive Booking / Service Enquiry Form",
+      "behavior": "No backend submission. Validates required fields, shows step/spinner, then presents a polished local confirmation badge/dialog with booking reference number.",
+      "phone_numbers": ["9007692978", "9748615101"]
+    },
+    "gallery": {
+      "type": "Categorized Portfolio Grid with Lightbox",
+      "categories": ["All Work", "General Overhaul", "Engine Restoration", "Electrical & Diagnostic", "Custom Modifications", "Periodic Service"],
+      "lightbox": "Dialog preview modal showing high-res workshop imagery, mechanical notes, and direct Enquiry button."
+    }
+  },
+  "image_urls": {
+    "hero_banner": "https://images.unsplash.com/photo-1668335408141-ea5c49cc1912?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHxyb3lhbCUyMGVuZmllbGQlMjBtb3RvcmN5Y2xlJTIwd29ya3Nob3AlMjBtZWNoYW5pY3xlbnwwfHx8fDE3ODg3NTYyMjl8MA&ixlib=rb-4.1.0&q=85",
+    "engine_restoration": "https://images.unsplash.com/photo-1646904748822-373f0fd5ea52?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwxfHxyb3lhbCUyMGVuZmllbGQlMjBtb3RvcmN5Y2xlJTIwd29ya3Nob3AlMjBtZWNoYW5pY3xlbnwwfHx8fDE3ODg3NTYyMjl8MA&ixlib=rb-4.1.0&q=85",
+    "mechanic_working": "https://images.unsplash.com/photo-1723108270015-e2bb09d394fe?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwzfHxyb3lhbCUyMGVuZmllbGQlMjBtb3RvcmN5Y2xlJTIwd29ya3Nob3AlMjBtZWNoYW5pY3xlbnwwfHx8fDE3ODg3NTYyMjl8MA&ixlib=rb-4.1.0&q=85",
+    "vintage_classic": "https://images.unsplash.com/photo-1762866263532-005f10d3bbdc?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw0fHxyb3lhbCUyMGVuZmllbGQlMjBtb3RvcmN5Y2xlJTIwd29ya3Nob3AlMjBtZWNoYW5pY3xlbnwwfHx8fDE3ODg3NTYyMjl8MA&ixlib=rb-4.1.0&q=85",
+    "vintage_headlight": "https://images.unsplash.com/photo-1762866934223-3ca099fe68fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHw0fHx2aW50YWdlJTIwbW90b3JjeWNsZSUyMGhlYWRsaWdodCUyMGVuZ2luZXxlbnwwfHx8fDE3ODg3NTYyMzV8MA&ixlib=rb-4.1.0&q=85",
+    "workshop_indoor": "https://images.unsplash.com/photo-1775830087891-1e3d0da97ae2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzl8MHwxfHNlYXJjaHwyfHx2aW50YWdlJTIwbW90b3JjeWNsZSUyMGhlYWRsaWdodCUyMGVuZ2luZXxlbnwwfHx8fDE3ODg3NTYyMzV8MA&ixlib=rb-4.1.0&q=85"
+  },
+  "business_details": {
+    "name": "ALS ROYAL ENFIELD SERVICE",
+    "tagline": "Master Royal Enfield Technicians & Precision Workshop",
+    "phones": ["9007692978", "9748615101"],
+    "formatted_phones": ["+91 90076 92978", "+91 97486 15101"],
+    "hours": {
+      "weekdays": "Monday - Saturday: 9:00 AM - 8:00 PM",
+      "sunday": "Sunday: 10:00 AM - 2:00 PM (Emergency & By Appointment)"
+    },
+    "location": {
+      "address": "ALS Royal Enfield Service Workshop, Main Garage Hub",
+      "google_maps_link": "https://maps.google.com/?q=ALS+Royal+Enfield+Service"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Build a complete multi-route marketing & workshop discovery website with React Router (or tab/page routing). Routes: Home, Services, Workshop, About, Gallery, Visit Us, Contact, Book Service.",
+    "STRICTLY NO E-COMMERCE: Do NOT add shopping cart, checkout, payment gateway, user accounts, product buying, order tracking, or shop dashboards.",
+    "Include both confirmed phone numbers (9007692978 & 9748615101) in header topbar, contact sections, sticky footer, and mobile bottom bar.",
+    "Add 'data-testid' to ALL interactive elements (buttons, links, form inputs, tabs, gallery filters, dialog triggers).",
+    "Use Sonner for toast feedback when booking form is submitted or phone numbers are copied.",
+    "Implement demo booking submission state locally with reference ID generation and local confirmation modal/card.",
+    "Ensure dark mode editorial industrial aesthetic with high text contrast (APCA AA compliant)."
+  ]
+}

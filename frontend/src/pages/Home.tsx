@@ -1,0 +1,42 @@
+import { ArrowDownRight, ArrowUpRight, Check, MapPin, Phone, Wrench } from "lucide-react";
+import { Link } from "react-router-dom";
+import { images, business, services } from "@/lib/site";
+import { buttonVariants } from "@/components/ui/button";
+import CtaBand from "@/components/site/CtaBand";
+
+export default function Home() {
+  return (
+    <div data-testid="home-page">
+      <section className="hero-section" data-testid="home-hero-section">
+        <img src={images.motorcycleSide} alt="Royal Enfield motorcycle inside the ALS workshop" className="hero-image" data-testid="home-hero-image" />
+        <div className="hero-scrim" />
+        <div className="hero-grid-lines" aria-hidden="true" />
+        <div className="relative mx-auto flex min-h-[650px] max-w-[1440px] flex-col justify-end px-5 pb-16 pt-32 sm:px-8 sm:pb-20 lg:min-h-[770px] lg:px-12 lg:pb-28">
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-4" data-testid="home-hero-eyebrow"><span className="number-tag">01</span><span className="eyebrow">{business.location}</span></div>
+            <h1 className="mt-7 max-w-4xl font-display text-[clamp(3.5rem,9vw,8.8rem)] font-black uppercase leading-[0.84] tracking-[-0.075em] text-white" data-testid="home-hero-heading">Keep your<br /><span className="text-amber-300">ride ready.</span></h1>
+            <p className="mt-8 max-w-lg text-base leading-7 text-white/65 sm:text-lg" data-testid="home-hero-description">Professional motorcycle servicing and repair in Thakurpukur, Kolkata.</p>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row" data-testid="home-hero-actions">
+              <Link to="/book" className={buttonVariants({ size: "lg", className: "cta-amber" })} data-testid="home-hero-book-link">Book a service <ArrowUpRight size={17} /></Link>
+              <a href={business.mapsUrl} target="_blank" rel="noreferrer" className={buttonVariants({ variant: "outline", size: "lg", className: "hero-outline" })} data-testid="home-hero-directions-link"><MapPin size={16} /> Get directions</a>
+            </div>
+          </div>
+          <div className="mt-16 flex items-center justify-between border-t border-white/20 pt-4 text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 sm:mt-24" data-testid="home-hero-meta"><span>Motorcycle service / repair</span><span className="hidden sm:inline">Scroll to explore <ArrowDownRight className="ml-2 inline" size={14} /></span></div>
+        </div>
+      </section>
+
+      <section className="info-strip" data-testid="home-info-strip"><div className="mx-auto grid max-w-[1440px] md:grid-cols-3"><div className="info-cell" data-testid="info-hours"><span className="info-label">Open</span><strong>Mon–Sat 10:30 AM – 7:30 PM</strong><small>Sun 10:30 AM – 3:00 PM</small></div><div className="info-cell" data-testid="info-location"><span className="info-label">Location</span><strong>Thakurpukur, Kolkata</strong><small>Post Office Joka · 700104</small></div><div className="info-cell" data-testid="info-service"><span className="info-label">Service</span><strong>Motorcycle servicing & repair</strong><small>Workshop visits by enquiry</small></div></div></section>
+
+      <section className="section-shell" data-testid="home-services-section"><div className="section-heading-row"><div><p className="eyebrow" data-testid="home-services-eyebrow">02 / What we do</p><h2 className="section-heading" data-testid="home-services-heading">Service that starts<br /><span className="text-white/40">with attention.</span></h2></div><Link to="/services" className="text-link hidden sm:inline-flex" data-testid="home-services-view-all-link">View all services <ArrowUpRight size={15} /></Link></div><div className="service-feature-grid mt-14"><div className="service-feature-image" data-testid="home-service-feature-image"><img src={images.workshop} alt="ALS workshop service bay" /><div className="image-caption">Workshop floor / ALS</div></div><div className="service-feature-list" data-testid="home-service-list">{services.slice(0, 4).map((service) => <Link to="/services" key={service.index} className="service-list-row" data-testid={`home-service-${service.index}-link`}><span className="service-index">{service.index}</span><span><strong>{service.title}</strong><small>{service.description}</small></span><ArrowUpRight size={18} /></Link>)}<Link to="/services" className="text-link mt-6 inline-flex" data-testid="home-services-mobile-link">Explore service categories <ArrowUpRight size={15} /></Link></div></div></section>
+
+      <section className="dark-section" data-testid="home-trust-section"><div className="mx-auto grid max-w-[1440px] gap-14 px-5 py-20 sm:px-8 md:grid-cols-[0.8fr_1.2fr] md:py-28 lg:px-12 lg:py-36"><div><p className="eyebrow" data-testid="home-trust-eyebrow">03 / The ALS approach</p><h2 className="section-heading mt-5" data-testid="home-trust-heading">Your bike deserves<br /><span className="text-amber-300">the right care.</span></h2></div><div className="grid gap-8 sm:grid-cols-2" data-testid="home-trust-list">{["Professional attention", "Thorough inspection", "Service-focused approach", "Customer convenience"].map((item, index) => <div className="trust-item" key={item} data-testid={`trust-item-${index + 1}`}><span className="trust-icon"><Check size={15} /></span><div><h3>{item}</h3><p>Grounded service conversations for the bike in front of us, without overpromising.</p></div></div>)}</div></div></section>
+
+      <section className="section-shell" data-testid="home-workshop-section"><div className="split-story-grid"><div className="story-copy"><p className="eyebrow" data-testid="home-workshop-eyebrow">04 / Workshop experience</p><h2 className="section-heading mt-5" data-testid="home-workshop-heading">Built around<br /><span className="text-white/40">your ride.</span></h2><p className="body-copy mt-7" data-testid="home-workshop-description">Bring in the bike, talk through the issue or service requirement, and let the work begin with a practical inspection. Clear communication stays part of the process.</p><div className="mt-8 grid gap-3 text-sm text-white/70"><div className="flex items-center gap-3"><span className="step-dot">01</span> Discuss the requirement</div><div className="flex items-center gap-3"><span className="step-dot">02</span> Inspect the motorcycle</div><div className="flex items-center gap-3"><span className="step-dot">03</span> Carry out the required work</div></div><Link to="/workshop" className="text-link mt-9 inline-flex" data-testid="home-workshop-link">Inside the workshop <ArrowUpRight size={15} /></Link></div><div className="story-image-stack"><img src={images.storefront} alt="ALS Royal Enfield Service storefront" className="story-image-main" data-testid="home-workshop-storefront-image" /><img src={images.signboard} alt="ALS Royal Enfield Service sign" className="story-image-inset" data-testid="home-workshop-sign-image" /></div></div></section>
+
+      <section className="showcase-section" data-testid="home-showcase-section"><div className="showcase-image-wrap"><img src={images.motorcycleRear} alt="Royal Enfield motorcycle on the service platform" data-testid="home-showcase-image" /><div className="showcase-overlay"><p className="eyebrow">05 / Motorcycle showcase</p><h2 className="mt-4 max-w-xl font-display text-4xl font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-6xl" data-testid="home-showcase-heading">Good service starts with attention to detail.</h2><Link to="/gallery" className="text-link mt-7 inline-flex" data-testid="home-showcase-gallery-link">See the workshop gallery <ArrowUpRight size={15} /></Link></div></div></section>
+
+      <section className="contact-ribbon" data-testid="home-contact-ribbon"><div><p className="eyebrow">Call / enquire / visit</p><h2 data-testid="home-contact-heading">Talk to the workshop.</h2></div><div className="flex flex-col gap-3 sm:flex-row"><a href={`tel:${business.phones[0]}`} className={buttonVariants({ variant: "outline", size: "lg", className: "cta-outline" })} data-testid="home-call-link"><Phone size={16} /> +91 90076 92978</a><Link to="/visit" className={buttonVariants({ size: "lg", className: "cta-amber" })} data-testid="home-visit-link"><Wrench size={16} /> Visit workshop</Link></div></section>
+      <CtaBand />
+    </div>
+  );
+}
