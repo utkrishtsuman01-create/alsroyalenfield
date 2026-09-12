@@ -24,7 +24,7 @@ export const pageSeo: Record<string, PageSeo> = {
   },
   "/book-service": {
     title: "Book Motorcycle Service | ALS Royal Enfield Service",
-    description: "Share your motorcycle service requirement with ALS Royal Enfield Service in Thakurpukur, Kolkata through a local service enquiry form.",
+    description: "Prepare a motorcycle service enquiry to review and send to ALS Royal Enfield Service in Thakurpukur, Kolkata through WhatsApp.",
     label: "Book Service",
   },
   "/workshop": {
@@ -49,7 +49,7 @@ export const pageSeo: Record<string, PageSeo> = {
   },
   "/contact": {
     title: "Contact ALS Royal Enfield Service | Kolkata",
-    description: "Call, get directions or start a motorcycle service enquiry with ALS Royal Enfield Service in Thakurpukur, Kolkata.",
+    description: "Call, get directions or prepare a WhatsApp service enquiry for ALS Royal Enfield Service in Thakurpukur, Kolkata.",
     label: "Contact",
   },
   "/404": {
@@ -137,14 +137,16 @@ export default function SiteMeta() {
     setMeta("name", "theme-color", "#0d0f12");
     setMeta("property", "og:title", seo.title);
     setMeta("property", "og:description", seo.description);
-    setMeta("property", "og:image", images.signboard);
-    setMeta("property", "og:image:alt", "ALS Royal Enfield Service workshop signboard");
+    setMeta("property", "og:image", `${SITE_URL}/als-social-card.svg`);
+    setMeta("property", "og:image:alt", "ALS Royal Enfield Service — Keep your ride ready");
+    setMeta("property", "og:image:width", "1200");
+    setMeta("property", "og:image:height", "630");
     setMeta("property", "og:type", routePath === "/" ? "website" : "article");
     setMeta("property", "og:url", canonical);
     setMeta("name", "twitter:card", "summary_large_image");
     setMeta("name", "twitter:title", seo.title);
     setMeta("name", "twitter:description", seo.description);
-    setMeta("name", "twitter:image", images.signboard);
+    setMeta("name", "twitter:image", `${SITE_URL}/als-social-card.svg`);
     setCanonical(canonical);
     setSchema(routePath, seo, canonical);
   }, [routePath, seo]);

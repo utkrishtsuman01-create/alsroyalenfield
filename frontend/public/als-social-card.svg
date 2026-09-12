@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">ALS Royal Enfield Service</title>
+  <desc id="desc">Keep your ride ready — motorcycle service in Thakurpukur, Kolkata.</desc>
+  <defs>
+    <linearGradient id="shade" x1="0" x2="1">
+      <stop offset="0" stop-color="#0d0f12" stop-opacity="0.98"/>
+      <stop offset="0.52" stop-color="#0d0f12" stop-opacity="0.72"/>
+      <stop offset="1" stop-color="#0d0f12" stop-opacity="0.12"/>
+    </linearGradient>
+    <linearGradient id="floor" y1="0" y2="1">
+      <stop offset="0.56" stop-color="#0d0f12" stop-opacity="0"/>
+      <stop offset="1" stop-color="#0d0f12" stop-opacity="0.86"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0d0f12"/>
+  <image href="https://customer-assets-4nw71qhi.emergentagent.net/job_e4df3abb-9206-4392-bdfb-dc077d351f56/artifacts/pbupvgko_image.png" x="0" y="0" width="1200" height="630" preserveAspectRatio="xMidYMid slice"/>
+  <rect width="1200" height="630" fill="url(#shade)"/>
+  <rect width="1200" height="630" fill="url(#floor)"/>
+  <path d="M72 66h82l-12 43H60z" fill="#f5b027"/>
+  <text x="83" y="96" fill="#0d0f12" font-family="Arial, sans-serif" font-size="23" font-weight="900" font-style="italic">ALS</text>
+  <text x="176" y="84" fill="#f3f4f6" font-family="Arial, sans-serif" font-size="18" font-weight="800" letter-spacing="2">ROYAL ENFIELD SERVICE</text>
+  <text x="176" y="105" fill="#aeb3ba" font-family="Arial, sans-serif" font-size="10" letter-spacing="4">THAKURPUKUR • KOLKATA</text>
+  <rect x="72" y="234" width="56" height="4" fill="#f5b027"/>
+  <text x="72" y="307" fill="#f3f4f6" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" letter-spacing="-4">KEEP YOUR</text>
+  <text x="72" y="383" fill="#f5b027" font-family="Arial Black, Arial, sans-serif" font-size="72" font-weight="900" letter-spacing="-4">RIDE READY.</text>
+  <text x="76" y="436" fill="#d2d5d9" font-family="Arial, sans-serif" font-size="20">Professional motorcycle servicing and repair.</text>
+  <line x1="72" y1="526" x2="1128" y2="526" stroke="#f3f4f6" stroke-opacity="0.22"/>
+  <text x="72" y="563" fill="#aeb3ba" font-family="Arial, sans-serif" font-size="13" letter-spacing="3">MOTORCYCLE SERVICE / REPAIR</text>
+  <text x="1128" y="563" fill="#f5b027" text-anchor="end" font-family="Arial, sans-serif" font-size="13" font-weight="700" letter-spacing="2">ALS / KOLKATA</text>
+</svg>
