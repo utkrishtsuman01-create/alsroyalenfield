@@ -1,0 +1,70 @@
+{
+  "iteration": 1,
+  "mode": "generate",
+  "summary": "All 8 acceptance criteria covered by 8 named browser checks; all passed. No API-bearing criteria exist (booking form is explicitly local-only with no backend endpoint), so no backend pytest artifacts were required.",
+  "passed": 8,
+  "failed": 0,
+  "retest_needed": false,
+  "checks": [
+    {
+      "criterion": "All public routes and custom 404 are complete and reachable",
+      "name": "routes-and-404-complete",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Navigated to /, /services, /workshop, /about, /gallery, /visit-us, /contact, /book-service (each has 1 H1); /book -> /book-service and /visit -> /visit-us redirects confirmed via URL assertion; unknown route shows branded 404 with Home/Services/Visit links visible. Ran against APP_URL https://als-royal-enfield.preview.emergentagent.com."
+    },
+    {
+      "criterion": "Route-specific SEO and structured data are correct",
+      "name": "seo-metadata-per-route",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Home: 1 H1, unique title/description, canonical ending '/', og:title, twitter:card, JSON-LD containing WebSite/WebPage/AutomotiveBusiness present. Services: unique title/description vs Home, self canonical '/services', BreadcrumbList JSON-LD present. 404 route has meta robots content containing 'noindex'."
+    },
+    {
+      "criterion": "Crawler and brand assets are public",
+      "name": "crawler-and-brand-assets-public",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "GET /sitemap.xml -> 200 with <urlset>; /robots.txt -> 200 with Sitemap: directive; /llms.txt -> 200 containing 'ALS Royal Enfield' and no framework branding strings; /als-mark.svg -> 200 with svg content-type."
+    },
+    {
+      "criterion": "Local-only service enquiry form is hardened",
+      "name": "booking-form-validation-and-local-success",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Blank submit shows role=alert error (booking-form-error). Valid name/phone/email/bike model/service/date/message submission shows booking-success-state. Monitored all page requests during interaction: zero requests matched /api/, confirming no customer data was sent to any API."
+    },
+    {
+      "criterion": "Navigation and internal linking work on mobile",
+      "name": "mobile-navigation-accessible",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "390x844 viewport: no horizontal overflow on / or /book-service (scrollWidth-clientWidth <= 2px). mobile-menu-toggle-button toggles aria-expanded true/false and mobile-navigation-panel mounts/unmounts; mobile-book-service-link navigates to /book-service and booking-form renders."
+    },
+    {
+      "criterion": "Gallery is accessible and functional",
+      "name": "gallery-filter-and-lightbox-accessible",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Filtering to 'Workshop' reduced visible tile count vs 'All'. Opening a tile shows gallery-lightbox-dialog with gallery-lightbox-image having a descriptive alt attribute (>=5 chars); Escape key closes the dialog (count 0)."
+    },
+    {
+      "criterion": "Business facts and conversion links are accurate",
+      "name": "business-facts-and-conversion-links-accurate",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "/contact shows both formatted phones (90076 92978, 97486 15101), all tel: links restricted to {9007692978, 9748615101}, address contains 700104 and Thakurpukur, directions link target=_blank with href containing Joka/Mahatma+Gandhi+Rd. /visit-us shows Monday-Saturday 10:30 AM-7:30 PM and Sunday 10:30 AM-3:00 PM."
+    },
+    {
+      "criterion": "No broken assets or browser errors",
+      "name": "no-broken-assets-or-console-errors",
+      "lane": "browser",
+      "status": "passed",
+      "evidence": "Navigated /, /gallery, /book-service: zero failed network requests, zero image responses >=400, all gallery <img> elements have naturalWidth > 0 (not broken), zero non-DevTools console errors captured."
+    }
+  ],
+  "bugs": [],
+  "action_items": [
+    "No API-bearing criterion exists in this app (booking is explicitly local-only per spec_deviations), so no backend pytest artifact was created this iteration -- by design, not an omission."
+  ]
+}

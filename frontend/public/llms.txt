@@ -1,0 +1,34 @@
+# ALS Royal Enfield Service
+
+## Business
+- Name: ALS Royal Enfield Service
+- Type: Local motorcycle servicing and repair workshop
+- Location: Post Office Joka, 172, Mahatma Gandhi Rd, Srijoni, Thakurpukur, Kolkata, Chak Thakurani, West Bengal 700104, India
+- Purpose: Help visitors discover the workshop, understand service options, enquire, get directions and visit.
+
+## Services
+- Periodic servicing
+- Oil and filter service
+- Chain and sprocket check
+- General inspection
+- General mechanical repairs
+- Brake and clutch service
+- Engine and mechanical diagnosis
+- Electrical diagnosis
+
+## Contact
+- Phone: +91 90076 92978
+- Phone: +91 97486 15101
+- Monday–Saturday: 10:30 AM–7:30 PM
+- Sunday: 10:30 AM–3:00 PM
+- Directions: https://www.google.com/maps/dir//Post+Office+Joka,+172,+Mahatma+Gandhi+Rd,+Srijoni,+Thakurpukur,+Kolkata,+Chak+Thakurani,+West+Bengal+700104
+
+## Public pages
+- Home: https://als-royal-enfield.preview.emergentagent.com/
+- Services: https://als-royal-enfield.preview.emergentagent.com/services
+- Book service: https://als-royal-enfield.preview.emergentagent.com/book-service
+- Workshop: https://als-royal-enfield.preview.emergentagent.com/workshop
+- About: https://als-royal-enfield.preview.emergentagent.com/about
+- Gallery: https://als-royal-enfield.preview.emergentagent.com/gallery
+- Visit us: https://als-royal-enfield.preview.emergentagent.com/visit-us
+- Contact: https://als-royal-enfield.preview.emergentagent.com/contact

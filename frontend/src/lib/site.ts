@@ -105,6 +105,6 @@ export const navItems = [
   { label: "Workshop", to: "/workshop" },
   { label: "About", to: "/about" },
   { label: "Gallery", to: "/gallery" },
-  { label: "Visit Us", to: "/visit" },
+  { label: "Visit Us", to: "/visit-us" },
   { label: "Contact", to: "/contact" },
 ] as const;

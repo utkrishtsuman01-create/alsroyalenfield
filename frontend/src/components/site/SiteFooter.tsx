@@ -11,7 +11,7 @@ export default function SiteFooter() {
             <p className="eyebrow" data-testid="footer-eyebrow">ALS / 01 — SERVICE WORKSHOP</p>
             <h2 className="mt-5 max-w-lg font-display text-4xl font-black uppercase leading-[0.92] tracking-[-0.05em] text-white sm:text-5xl" data-testid="footer-heading">Keep your ride ready.</h2>
             <p className="mt-6 max-w-md text-sm leading-7 text-white/55" data-testid="footer-description">Professional motorcycle servicing and repair in Thakurpukur, Kolkata. Bring in the bike, talk through the need, and start with a clear service conversation.</p>
-            <Link to="/book" className="inline-flex items-center gap-2 pt-7 text-sm font-bold uppercase tracking-[0.14em] text-amber-300" data-testid="footer-book-service-link">Request service <ArrowUpRight size={16} /></Link>
+            <Link to="/book-service" className="inline-flex items-center gap-2 pt-7 text-sm font-bold uppercase tracking-[0.14em] text-amber-300" data-testid="footer-book-service-link">Request service <ArrowUpRight size={16} /></Link>
           </div>
           <div>
             <p className="eyebrow" data-testid="footer-navigation-label">Explore</p>

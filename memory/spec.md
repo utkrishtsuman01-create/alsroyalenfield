@@ -6,8 +6,9 @@ Premium, dark editorial marketing website for a local motorcycle servicing and r
 ## Routes and flows
 - `/` homepage: hero, hours/location strip, service preview, trust messaging, workshop story, motorcycle showcase, CTAs.
 - `/services`: maintenance, repair and bike-care service categories with enquire links.
-- `/workshop`, `/about`, `/gallery`, `/visit`, `/contact`: workshop discovery and trust pages.
-- `/book`: local-only demo service enquiry form; submission shows a confirmation state and explicitly does not contact or confirm an appointment.
+- `/workshop`, `/about`, `/gallery`, `/visit-us`, `/contact`: workshop discovery and trust pages.
+- `/book-service`: local-only demo service enquiry form with client-side length, phone, email, date and message validation; submission shows a confirmation state and explicitly does not contact or confirm an appointment.
+- `/book` and `/visit` are compatibility redirects to `/book-service` and `/visit-us`; they are not included in the sitemap.
 - Gallery supports category filters and a lightbox dialog.
 - Phone links use 9007692978 and 9748615101. Directions use the supplied Google Maps directions URL.
 
@@ -19,3 +20,10 @@ Premium, dark editorial marketing website for a local motorcycle servicing and r
 
 ## Data and auth
 No app data persistence, authentication, customer accounts, payments or ecommerce. Backend remains the template connectivity API only; the enquiry is intentionally local demo state.
+
+## Production hardening
+- Every public page has route-aware title, description, canonical, Open Graph/Twitter metadata, one H1 and JSON-LD WebPage data; inner pages include visible breadcrumbs and BreadcrumbList data.
+- AutomotiveBusiness, WebSite and Service structured data contain only confirmed business facts.
+- `/sitemap.xml`, `/robots.txt`, `/llms.txt`, `/als-mark.svg` and a branded custom 404 are public.
+- Production source maps are disabled. Static-host and API security headers cover CSP/frame restrictions, MIME sniffing, referrer policy, permissions policy and HSTS where deployed over HTTPS.
+- Runtime dependency audit is clean; the `shadcn` generator/styles package is build-only.

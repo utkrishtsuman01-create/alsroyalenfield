@@ -14,6 +14,13 @@ const visualEditsDisabled = process.env.DISABLE_VISUAL_EDITS === "true";
 // Branded error overlay (build + runtime errors); escape hatch mirrors the two above.
 const emergentOverlayDisabled = process.env.DISABLE_EMERGENT_OVERLAY === "true";
 
+const runtimeSecurityHeaders = {
+  "X-Content-Type-Options": "nosniff",
+  "Referrer-Policy": "strict-origin-when-cross-origin",
+  "Permissions-Policy": "camera=(), microphone=(), geolocation=(), payment=()",
+  "X-Frame-Options": "DENY",
+};
+
 // Fails open: a broken overlay package must degrade to "no overlay" (Vite's own overlay
 // takes over), never to "no dev server". Never let a preview aid take the app down.
 async function loadEmergentOverlay() {
@@ -47,6 +54,9 @@ export default defineConfig(async () => {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
+    },
+    build: {
+      sourcemap: false,
     },
     // Every shipped dep, pre-bundled up front. Vite discovers deps lazily, so the first
     // import outside the initial graph would trigger a re-optimize + reload mid-session.
@@ -82,6 +92,7 @@ export default defineConfig(async () => {
     server: {
       host: true,
       port: 3000,
+      headers: runtimeSecurityHeaders,
       allowedHosts: true,
       // Preview probe + /edit-file are cross-origin from the Emergent tab; Vite defaults to localhost-only CORS.
       cors: true,
@@ -98,6 +109,9 @@ export default defineConfig(async () => {
           changeOrigin: true,
         },
       },
+    },
+    preview: {
+      headers: runtimeSecurityHeaders,
     },
   } satisfies UserConfig;
 });

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ArrowUpRight, Menu, Phone, X } from "lucide-react";
 import { navItems, business } from "@/lib/site";
@@ -8,6 +8,15 @@ import { cn } from "@/lib/utils";
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+
+  useEffect(() => {
+    if (!open) return;
+    const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", closeOnEscape);
+    return () => window.removeEventListener("keydown", closeOnEscape);
+  }, [open]);
 
   return (
     <header className="site-header" data-testid="site-header">
@@ -37,7 +46,7 @@ export default function SiteHeader() {
           <a href={`tel:${business.phones[0]}`} className="quick-call" data-testid="header-call-now-link">
             <Phone size={14} /> <span>Call now</span>
           </a>
-          <Link to="/book" className={buttonVariants({ size: "sm", className: "header-book-button" })} data-testid="header-book-service-link">
+          <Link to="/book-service" className={buttonVariants({ size: "sm", className: "header-book-button" })} data-testid="header-book-service-link">
             Book a service <ArrowUpRight size={15} />
           </Link>
         </div>
@@ -48,6 +57,7 @@ export default function SiteHeader() {
           onClick={() => setOpen((value) => !value)}
           aria-label={open ? "Close navigation" : "Open navigation"}
           aria-expanded={open}
+          aria-controls="mobile-navigation-panel"
           data-testid="mobile-menu-toggle-button"
         >
           {open ? <X size={21} /> : <Menu size={21} />}
@@ -55,7 +65,7 @@ export default function SiteHeader() {
       </div>
 
       {open && (
-        <div className="mobile-navigation xl:hidden" data-testid="mobile-navigation-panel">
+        <div id="mobile-navigation-panel" className="mobile-navigation xl:hidden" data-testid="mobile-navigation-panel">
           <nav className="flex flex-col" aria-label="Mobile navigation">
             {navItems.map((item) => (
               <Link
@@ -70,7 +80,7 @@ export default function SiteHeader() {
             ))}
           </nav>
           <div className="mt-5 flex flex-col gap-3 border-t border-white/10 pt-5">
-            <Link to="/book" onClick={() => setOpen(false)} className={buttonVariants({ size: "lg", className: "w-full justify-between" })} data-testid="mobile-book-service-link">
+            <Link to="/book-service" onClick={() => setOpen(false)} className={buttonVariants({ size: "lg", className: "w-full justify-between" })} data-testid="mobile-book-service-link">
               Book a service <ArrowUpRight size={17} />
             </Link>
             <a href={`tel:${business.phones[0]}`} className="quick-call justify-center py-3" data-testid="mobile-call-now-link">
